@@ -8,9 +8,10 @@ import java.util.*;
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store = new HashMap<>();
     private static  Long sequence = 0L; // 회원 아이디 값
+
+
     @Override
     public Member save(Member member) {
-        // 회원 정보 저장
         member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
@@ -31,5 +32,10 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    // store 초기화 코드
+    public void clearStore(){
+        store.clear();
     }
 }
