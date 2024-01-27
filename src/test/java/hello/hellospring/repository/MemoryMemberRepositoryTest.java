@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class MemoryMemberRepositoryTest {
 
-    MemoryMemberRepository repository = new MemoryMemberRepository();
+   MemoryMemberRepository repository = new MemoryMemberRepository();
 
     // 각각의 메소드 수행이 끝난후 repository 초기화
     @AfterEach
