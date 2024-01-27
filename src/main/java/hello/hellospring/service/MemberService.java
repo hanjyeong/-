@@ -9,14 +9,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service // 스프링이 관리하는 객체로 등록해줘야함
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
     // 외부에서 memberRepository의 값을 주입 받음 : 생성자 주입
-    @Autowired
+
+    //MemberService의 생성자: 매개변수 Memberrepository 객체
     public MemberService(MemberRepository memberRepository) {
+
         this.memberRepository = memberRepository;
     }
 
