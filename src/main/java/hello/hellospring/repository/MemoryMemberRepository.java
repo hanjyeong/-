@@ -10,18 +10,20 @@ public class MemoryMemberRepository implements MemberRepository{
     private static  Long sequence = 0L; // 회원 아이디 값
 
 
+    // 회원 정보 저장
     @Override
     public Member save(Member member) {
         member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
     }
-
+   // 아이디로 회원 정보 조회
     @Override
     public Optional<Member> findById(Long id) {
         return Optional.ofNullable(store.get(id));
     }
 
+    // 이름으로 회원 정보 조회
     @Override
     public Optional<Member> findByName(String name) {
           return store.values().stream()
@@ -29,6 +31,7 @@ public class MemoryMemberRepository implements MemberRepository{
                   .findAny();
     }
 
+    // 전체 회원 정보 조회
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
