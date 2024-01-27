@@ -40,11 +40,13 @@ public class MemberService {
 
     // 전체 회원 조회
     public List<Member> findMembers() {
+
         return memberRepository.findAll();
     }
 
     // Service에서 repository 값을 찾을 수 있도록 메소드를 만듬
     public Optional<Member> findOne (Long memberId){
+
         return memberRepository.findById(memberId);
     }
 
