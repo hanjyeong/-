@@ -17,6 +17,7 @@ public class MemberController {
 
     @Autowired // 스프링 컨테이너에 있는 memberService의 값을 주입시켜줌
     public MemberController(MemberService memberService){
+
         this.memberService=memberService;
     }
 

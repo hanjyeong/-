@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 // 인터페이스 메소드 구현부
-
+// 데이터를 메모리에 저장함
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long, Member> store = new HashMap<>();
     private static  Long sequence = 0L; // 회원 아이디 값

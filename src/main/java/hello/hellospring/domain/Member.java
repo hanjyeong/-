@@ -1,9 +1,17 @@
 package hello.hellospring.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Member {
-    //회원 엔티티
-    private String name;
+
+    @Id //pk
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increase
     private Long id;
+
+    @Column
+    private String name;
+
 
     public void setName(String name) {
         this.name = name;
